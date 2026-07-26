@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch 'main', url: 'https://github.com/MDC-Arons/Test-Automation'
+                git branch: 'main', url: 'https://github.com/MDC-Arons/Test-Automation.git/'
             }
         }
         stage('Install Dependencies') {
