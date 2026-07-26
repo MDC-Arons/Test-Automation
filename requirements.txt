@@ -1,1 +1,1 @@
-robotframework
+pip install robotframework
