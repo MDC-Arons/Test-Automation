@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                sh "checkout SCM"
-                checkout scm
+                git branch 'main', url: 'https://github.com/MDC-Arons/Test-Automation'
             }
         }
         stage('Install Dependencies') {
