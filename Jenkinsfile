@@ -24,11 +24,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/MDC-Arons/Test-Automation.git/'
             }
         }
-        stage('Install pip') {
-            steps {
-                sh 'python get-pip.py'
-            }
-        }
+
         stage('Install Dependencies') {
             steps {
                 sh 'pip install -r requirements.txt'
@@ -40,9 +36,9 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            archiveArtifacts artifacts: '*.xml,*.html,log.html,report.html'
-        }
-    }
+    // post {
+    //     always {
+    //         archiveArtifacts artifacts: '*.xml,*.html,log.html,report.html'
+    //     }
+    // }
 }
