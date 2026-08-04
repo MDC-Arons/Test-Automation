@@ -7,6 +7,13 @@ pipeline {
         }
     }
 
+    // Setting GLOBAL environment variable
+    // accomplished via: environment directive
+
+    environment  {
+        TEST_FLAG = 'TRUE'
+    }
+
     stages {
 
         stage('Checkout') {
@@ -14,13 +21,6 @@ pipeline {
                 git branch: 'main',
                     url: 'https://github.com/MDC-Arons/Test-Automation.git'
             }
-        }
-
-        // Setting environment variable
-        // accomplished via: environment directive
-
-        environment {
-            TEST_FLAG = 'TRUE'
         }
 
         stage('Install Dependencies') {
